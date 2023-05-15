@@ -1,16 +1,26 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+from casos import *
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == '__main__':
+    # Saída
+    print('Caso de entrada :')
+    print(caso_entrada)
+    print('Pesos:')
+    print(atributos)
+    print('Caso recomendado:')
+    print(caso_recomendado)
+    print('Casos base ordenados por similaridade:')
+    # for case, similaridade in similaridades:
+    #    print(case)
+    #    print('Similaridade:', similaridade)
+    # calculate similarity percentage for each case
+    total_similaridade = sum([sim[1] for sim in similaridades])
+    for sim in similaridades:
+        case = sim[0]
+        similaridade = sim[1]
+        similaridade_percentual = round((similaridade / total_similaridade) * 100, 2)
+        print(f"{case}, similaridade: {similaridade_percentual}%")
+    # A saída das similaridades é apresentada em ordem decrescente de similaridade. Em seguida, a
+    # similaridade é convertida em um percentual de similaridade em relação ao total da similaridade
+    # para cada caso. Finalmente, é exibido cada caso da base de casos, com seu percentual de
+    # similaridade em relação ao caso de entrada.
