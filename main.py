@@ -1,7 +1,14 @@
 # Press the green button in the gutter to run the script.
 from similaridades import *
+from tkinter import *
+from tkinter import ttk
 
 if __name__ == '__main__':
+    root = Tk()
+    
+
+    root.mainloop()
+
     # Saída
     print('Caso de entrada :')
     print(caso_entrada)
