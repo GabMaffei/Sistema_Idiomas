@@ -1,5 +1,5 @@
 # Press the green button in the gutter to run the script.
-from casos import *
+from similaridades import *
 
 if __name__ == '__main__':
     # Saída

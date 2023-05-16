@@ -1,5 +1,5 @@
 from atributos import *
-
+from entrada import *
 # base de casos registrados como uma lista de 50 casos
 base_casos = [
     {
@@ -405,32 +405,5 @@ base_casos = [
 
 ]
 
-# caso de entrada como um dicionário com valores para os mesmos atributos que os casos registrados na base
-caso_entrada = {
-    'idioma_alvo': idioma_alvo_dic['Inglês'],
-    'nivel_idioma': nivel_idioma_dic['Avançado'],
-    'objetivo_aprendizagem': 8,
-    'tempo_disponivel': 2,
-    'recursos_aprendizagem': recursos_aprendizagem_dic['filmes'],
-    'comunidade': comunidade_dic['acadêmicos']
-}
 
-# Calcula a similaridade entre o caso de entrada e cada caso na base usando a fórmula de distancia euclidiana pros atributos numéricos e a igualdade pros atributos categóricos.
-# É ponderada pelos pesos e é armazenada em uma lista de tuplas contendo o caso de base e similaridade calculada
-similaridades = []
-for case in base_casos:
-    similaridade = 0
-    for atributo, peso in atributos.items():
-        if atributo in ['recursos_aprendizagem', 'tipo_linguagem', 'idioma_alvo', 'comunidade'] :
-            # Para atributos categóricos, use o dicionário para mapear os rótulos de texto para valores numéricos
-            similaridade += peso * (caso_entrada[atributo] == case[atributo])
-        else:
-            similaridade += peso * (caso_entrada[atributo] - case[atributo])**2
-    similaridades.append((case, similaridade))
-
-# Ordenando os casos por similaridade e calcula a similaridade percentual pra cada caso, em relação ao total de similaridade da lista
-similaridades.sort(key=lambda x: x[1], reverse=True)
-
-# Recupera o caso mais similar e vai imprimir como uma recomendação pro caso de entrada ou o caso mais próximo em similaridade
-caso_recomendado = similaridades[0][0]
 
