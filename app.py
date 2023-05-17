@@ -10,7 +10,7 @@ class App:
         # Definindo o título
         root.title("Sistema de idiomas")
         # Definindo tamanho da janela
-        width = 600
+        width = 950
         height = 500
         screenwidth = root.winfo_screenwidth()
         screenheight = root.winfo_screenheight()
@@ -207,12 +207,13 @@ class App:
         # Caso RECOMENDADO - Fim -----------------------
 
         # SAIDA - Início -----------------------
-        g_line_edit_saida = tk.Text(root)
-        g_line_edit_saida["borderwidth"] = "1px"
+        self.g_line_edit_saida = tk.Text(root)
+        self.g_line_edit_saida["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
-        g_line_edit_saida["font"] = ft
-        g_line_edit_saida["fg"] = "#333333"
-        g_line_edit_saida.place(x=20, y=335, width=570, height=110)
+        self.g_line_edit_saida["font"] = ft
+        self.g_line_edit_saida["fg"] = "#333333"
+        self.g_line_edit_saida.place(x=20, y=335, width=920, height=110)
+        self.g_line_edit_saida["state"] = "disabled"
         # SAIDA - Fim -----------------------
 
         self.__botoes(root)
@@ -424,7 +425,7 @@ class App:
         g_button_477["fg"] = "#000000"
         g_button_477["justify"] = "center"
         g_button_477["text"] = "Calcular a similaridade"
-        g_button_477.place(x=210, y=450, width=166, height=30)
+        g_button_477.place(x=390, y=450, width=166, height=30)
         g_button_477["command"] = self.g_button_477_command
 
         # g_button_640 = tk.Button(root)
@@ -438,28 +439,29 @@ class App:
         # g_button_640["command"] = self.g_button_640_command
 
     def g_button_477_command(self):
+        self.g_line_edit_saida["state"] = "normal"
         # Saída
-        print('Caso de entrada :')
-        print(similaridades.caso_entrada)
-        print('Pesos:')
-        print(similaridades.atributos)
-        print('Caso recomendado:')
-        print(similaridades.caso_recomendado)
-        print('Casos base ordenados por similaridade:')
-        # for case, similaridade in similaridades:
-        #    print(case)
-        #    print('Similaridade:', similaridade)
+        # print('Caso de entrada :')
+        # print(similaridades.caso_entrada)
+        # print('Pesos:')
+        # print(similaridades.atributos)
+        # print('Caso recomendado:')
+        # print(similaridades.caso_recomendado)
+
+        self.g_line_edit_saida.insert(tk.END, 'Casos base ordenados por similaridade:\n')
+
         # Calculo do percentual
         total_similaridade = sum([sim[1] for sim in similaridades.similaridades])
         for sim in similaridades.similaridades:
             case = sim[0]
             similaridade = sim[1]
             similaridade_percentual = round((similaridade / total_similaridade) * 100, 2)
-            print(f"{case}, similaridade: {similaridade_percentual}%")
+            string = f"{case}, similaridade: {similaridade_percentual}%"
+            self.g_line_edit_saida.insert(tk.END, str(string + '\n'))
+            # print(f"{case}, similaridade: {similaridade_percentual}%")
+
+        self.g_line_edit_saida["state"] = "disabled"
         # A saída das similaridades é apresentada em ordem decrescente de similaridade. Em seguida, a
         # similaridade é convertida em um percentual de similaridade em relação ao total da similaridade
         # para cada caso. Finalmente, é exibido cada caso da base de casos, com seu percentual de
         # similaridade em relação ao caso de entrada.
-
-    # def g_button_640_command(self):
-    #     print("command")
