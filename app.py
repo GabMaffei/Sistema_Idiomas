@@ -1,13 +1,14 @@
 import tkinter as tk
-# from tkinter import ttk
+from tkinter import ttk
 import tkinter.font as font
+from atributos import *
 
 
 class App:
     def __init__(self, root):
-        # setting title
+        # Definindo o título
         root.title("Sistema de idiomas")
-        # setting window size
+        # Definindo tamanho da janela
         width = 600
         height = 500
         screenwidth = root.winfo_screenwidth()
@@ -18,18 +19,74 @@ class App:
 
         self.__labels_casos_entrada(root)
         self.__labels_pesos(root)
+        self.__labels_recomendados(root)
 
-        g_label_884 = tk.Label(root)
+        # Casos entrada - Início
+        g_line_edit_obj_ent = tk.Entry(root)
+        g_line_edit_obj_ent["borderwidth"] = "1px"
+        ft = font.Font(family='Segoe UI',size=10)
+        g_line_edit_obj_ent["font"] = ft
+        g_line_edit_obj_ent["fg"] = "#333333"
+        g_line_edit_obj_ent["justify"] = "center"
+        # g_line_edit_obj_ent["text"] = "8"
+        # g_line_edit_obj_ent["show"] = "8"
+        # g_line_edit_obj_ent["invalidcommand"] = "invalud"
+        # g_line_edit_obj_ent["validatecommand"] = "validate"
+        g_line_edit_obj_ent.place(x=170, y=70, width=100, height=20)
+
+        g_line_edit_temp_ent = tk.Entry(root)
+        g_line_edit_temp_ent["borderwidth"] = "1px"
+        ft = font.Font(family='Segoe UI',size=10)
+        g_line_edit_temp_ent["font"] = ft
+        g_line_edit_temp_ent["fg"] = "#333333"
+        g_line_edit_temp_ent["justify"] = "center"
+        # g_line_edit_temp_ent["text"] = "Entry"
+        # g_line_edit_temp_ent["show"] = "tes"
+        # g_line_edit_temp_ent["invalidcommand"] = "invalud"
+        # g_line_edit_temp_ent["validatecommand"] = "validate"
+        g_line_edit_temp_ent.place(x=140, y=95, width=130, height=20)
+
+        g_combo_box_230 = ttk.Combobox(root)
+        ft = font.Font(family='Segoe UI',size=10)
+        g_combo_box_230["font"] = ft
+        g_combo_box_230["justify"] = "left"
+        g_combo_box_230.place(x=100, y=45, width=170, height=20)
+        g_combo_box_230['values'] = idioma_alvo_valores
+        g_combo_box_230.current(1)
+        # g_combo_box_230["exportselection"] = "0"
+
+        g_combo_box_231 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
-        g_label_884["font"] = ft
-        g_label_884["fg"] = "#333333"
-        g_label_884["justify"] = "left"
-        g_label_884["text"] = "Caso recomendado:"
-        g_label_884.place(x=20, y=290, width=229, height=30)
+        g_combo_box_231["font"] = ft
+        g_combo_box_231["justify"] = "left"
+        g_combo_box_231.place(x=370, y=45, width=220, height=20)
+        g_combo_box_231['values'] = nivel_idioma_valores
+        g_combo_box_231.current(2)
+        # g_combo_box_231["exportselection"] = "0"
 
+        g_combo_box_232 = ttk.Combobox(root)
+        ft = font.Font(family='Segoe UI', size=10)
+        g_combo_box_232["font"] = ft
+        g_combo_box_232["justify"] = "left"
+        g_combo_box_232.place(x=430, y=70, width=160, height=20)
+        g_combo_box_232['values'] = recursos_aprendizagem_valores
+        g_combo_box_232.current(1)
+        # g_combo_box_232["exportselection"] = "0"
+
+        g_combo_box_233 = ttk.Combobox(root)
+        ft = font.Font(family='Segoe UI', size=10)
+        g_combo_box_233["font"] = ft
+        g_combo_box_233["justify"] = "left"
+        g_combo_box_233.place(x=370, y=95, width=220, height=20)
+        g_combo_box_233['values'] = comunidade_valores
+        g_combo_box_233.current(0)
+        # g_combo_box_233["exportselection"] = "0"
+        # Casos entrada - Fim
+
+        # Botões
         g_button_477 = tk.Button(root)
         g_button_477["bg"] = "#f0f0f0"
-        ft = font.Font(family='Segoe UI', size=10)
+        ft = font.Font(family='Segoe UI', size=10, weight='bold')
         g_button_477["font"] = ft
         g_button_477["fg"] = "#000000"
         g_button_477["justify"] = "center"
@@ -44,7 +101,7 @@ class App:
         g_button_640["fg"] = "#000000"
         g_button_640["justify"] = "center"
         g_button_640["text"] = "Lista de casos"
-        g_button_640.place(x=30, y=450, width=74, height=30)
+        g_button_640.place(x=30, y=450, width=100, height=30)
         g_button_640["command"] = self.g_button_640_command
 
     def __labels_casos_entrada(self, root):
@@ -178,6 +235,73 @@ class App:
         g_label_818["text"] = "Comunidade:"
         g_label_818.place(x=280, y=195, width=91, height=30)
         # Peso dos atributos - Fim
+
+    def __labels_recomendados(self, root):
+        # Casos recomendados - Início
+        g_label_884 = tk.Label(root)
+        g_label_884["anchor"] = "w"
+        ft = font.Font(family='Segoe UI', size=10, weight='bold')
+        g_label_884["font"] = ft
+        g_label_884["fg"] = "#333333"
+        g_label_884["justify"] = "left"
+        g_label_884["text"] = "Caso recomendado:"
+        g_label_884.place(x=20, y=230, width=229, height=30)
+
+        g_label_743 = tk.Label(root)
+        g_label_743["anchor"] = "w"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_label_743["font"] = ft
+        g_label_743["fg"] = "#333333"
+        g_label_743["justify"] = "left"
+        g_label_743["text"] = "Idioma alvo:"
+        g_label_743.place(x=20, y=255, width=106, height=30)
+
+        g_label_962 = tk.Label(root)
+        g_label_962["anchor"] = "w"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_label_962["font"] = ft
+        g_label_962["fg"] = "#333333"
+        g_label_962["justify"] = "left"
+        g_label_962["text"] = "Nível idioma:"
+        g_label_962.place(x=280, y=255, width=113, height=30)
+
+        g_label_89 = tk.Label(root)
+        g_label_89["anchor"] = "w"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_label_89["font"] = ft
+        g_label_89["fg"] = "#333333"
+        g_label_89["justify"] = "left"
+        g_label_89["text"] = "Objetivo aprendizagem:"
+        g_label_89.place(x=20, y=280, width=148, height=30)
+
+        g_label_155 = tk.Label(root)
+        g_label_155["anchor"] = "w"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_label_155["font"] = ft
+        g_label_155["fg"] = "#333333"
+        g_label_155["justify"] = "left"
+        g_label_155["text"] = "Recurso aprendizagem:"
+        g_label_155.place(x=280, y=280, width=148, height=30)
+
+        g_label_255 = tk.Label(root)
+        g_label_255["anchor"] = "w"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_label_255["font"] = ft
+        g_label_255["fg"] = "#333333"
+        g_label_255["justify"] = "left"
+        g_label_255["text"] = "Tempo disponível:"
+        g_label_255.place(x=20, y=305, width=134, height=30)
+
+        g_label_818 = tk.Label(root)
+        g_label_818["anchor"] = "w"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_label_818["font"] = ft
+        g_label_818["fg"] = "#333333"
+        g_label_818["justify"] = "left"
+        g_label_818["text"] = "Comunidade:"
+        g_label_818.place(x=280, y=305, width=91, height=30)
+        # Casos recomendados - Fim
+
 
     def g_button_477_command(self):
         print("command")
