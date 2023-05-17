@@ -9,7 +9,7 @@ atributos = {
     # tendo a ver com a frequencia e duração das sessões
     'recursos_aprendizagem': 0.05,  # podendo afetar a eficácia do método de ensino utilizado
     # e como o conteúdo é apresentado
-    'comunidade': 0.1  # aprender idiomas pode influenciar o método de ensino mais adequado ao usuário
+    'comunidade': 0.1  # indica a comunidade de aprendizagem à qual o usuário pertence ou deseja interagir.
 }
 
 # valores possíveis para idioma_alvo_valores/recursos_aprendizagem/nivel_idioma_valores mapeados para números
