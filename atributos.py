@@ -12,14 +12,14 @@ atributos = {
     'comunidade': 0.2  # indica a comunidade de aprendizagem à qual o usuário pertence ou deseja interagir.
 }
 
-# valores possíveis para idioma_alvo_valores/recursos_aprendizagem/nivel_idioma_valores mapeados para números
+# valores possíveis para idioma_alvo/recursos_aprendizagem/nivel_idioma/comunidade mapeados para números
 # usando dicionários de modo que possam ser comparados numericamente
 idioma_alvo_valores = ['Alemão', 'Inglês', 'Italiano', 'Francês', 'Japonês', 'Espanhol']
 recursos_aprendizagem_valores = ['musicas', 'filmes', 'series', 'livros']
 nivel_idioma_valores = ['Iniciante', 'Intermediario', 'Avançado']
 comunidade_valores = ['acadêmicos', 'professores', 'funcionários']
 
-# dicionário para mapear os rótulos de texto para valores idioma_alvo/recursos_aprendizagem/nivel_idioma
+# dicionário para mapear os rótulos de texto para valores idioma_alvo/recursos_aprendizagem/nivel_idioma/comunidade
 idioma_alvo_dic = {valor: i for i, valor in enumerate(idioma_alvo_valores)}
 recursos_aprendizagem_dic = {valor: i for i, valor in enumerate(recursos_aprendizagem_valores)}
 nivel_idioma_dic = {valor: i for i, valor in enumerate(nivel_idioma_valores)}
