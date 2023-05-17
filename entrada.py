@@ -1,6 +1,6 @@
 from atributos import *
 
-# caso de entrada como um dicionário com valores para os mesmos atributos que os casos registrados na base
+# exemplo de caso de entrada como um dicionário com valores para os mesmos atributos que os casos registrados na base
 caso_entrada = {
     'idioma_alvo': idioma_alvo_dic['Inglês'],
     'nivel_idioma': nivel_idioma_dic['Avançado'],

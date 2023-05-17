@@ -2,7 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 import tkinter.font as font
 # from atributos import *
-import similaridades
+from similaridades import *
+from atributos import *
 
 
 class App:
@@ -24,14 +25,14 @@ class App:
 
         # Casos ENTRADA - Início -----------------------
         g_line_edit_obj_ent = tk.Entry(root)
-        g_line_edit_obj_ent_txt = tk.StringVar()
+        self.g_line_edit_obj_ent_txt = tk.StringVar()
         g_line_edit_obj_ent["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
         g_line_edit_obj_ent["font"] = ft
         g_line_edit_obj_ent["fg"] = "#333333"
         g_line_edit_obj_ent["justify"] = "left"
-        g_line_edit_obj_ent_txt.set("8")
-        g_line_edit_obj_ent["textvariable"] = g_line_edit_obj_ent_txt
+        self.g_line_edit_obj_ent_txt.set("8")
+        g_line_edit_obj_ent["textvariable"] = self.g_line_edit_obj_ent_txt
         # g_line_edit_obj_ent["text"] = "8"
         # g_line_edit_obj_ent["show"] = "8"
         # g_line_edit_obj_ent["invalidcommand"] = "invalud"
@@ -39,47 +40,47 @@ class App:
         g_line_edit_obj_ent.place(x=170, y=70, width=100, height=20)
 
         g_line_edit_temp_ent = tk.Entry(root)
-        g_line_edit_temp_ent_txt = tk.StringVar()
+        self.g_line_edit_temp_ent_txt = tk.StringVar()
         g_line_edit_temp_ent["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
         g_line_edit_temp_ent["font"] = ft
         g_line_edit_temp_ent["fg"] = "#333333"
         g_line_edit_temp_ent["justify"] = "left"
-        g_line_edit_temp_ent_txt.set("2")
-        g_line_edit_temp_ent["textvariable"] = g_line_edit_temp_ent_txt
+        self.g_line_edit_temp_ent_txt.set("2")
+        g_line_edit_temp_ent["textvariable"] = self.g_line_edit_temp_ent_txt
         g_line_edit_temp_ent.place(x=140, y=95, width=130, height=20)
 
-        g_combo_box_230 = ttk.Combobox(root)
+        self.g_combo_box_230 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
-        g_combo_box_230["font"] = ft
-        g_combo_box_230["justify"] = "left"
-        g_combo_box_230.place(x=100, y=45, width=170, height=20)
-        g_combo_box_230['values'] = similaridades.idioma_alvo_valores
-        g_combo_box_230.current(1)
+        self.g_combo_box_230["font"] = ft
+        self.g_combo_box_230["justify"] = "left"
+        self.g_combo_box_230.place(x=100, y=45, width=170, height=20)
+        self.g_combo_box_230['values'] = idioma_alvo_valores
+        self.g_combo_box_230.current(1)
 
-        g_combo_box_231 = ttk.Combobox(root)
+        self.g_combo_box_231 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
-        g_combo_box_231["font"] = ft
-        g_combo_box_231["justify"] = "left"
-        g_combo_box_231.place(x=370, y=45, width=220, height=20)
-        g_combo_box_231['values'] = similaridades.nivel_idioma_valores
-        g_combo_box_231.current(2)
+        self.g_combo_box_231["font"] = ft
+        self.g_combo_box_231["justify"] = "left"
+        self.g_combo_box_231.place(x=370, y=45, width=220, height=20)
+        self.g_combo_box_231['values'] = nivel_idioma_valores
+        self.g_combo_box_231.current(2)
 
-        g_combo_box_232 = ttk.Combobox(root)
+        self.g_combo_box_232 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
-        g_combo_box_232["font"] = ft
-        g_combo_box_232["justify"] = "left"
-        g_combo_box_232.place(x=430, y=70, width=160, height=20)
-        g_combo_box_232['values'] = similaridades.recursos_aprendizagem_valores
-        g_combo_box_232.current(1)
+        self.g_combo_box_232["font"] = ft
+        self.g_combo_box_232["justify"] = "left"
+        self.g_combo_box_232.place(x=430, y=70, width=160, height=20)
+        self.g_combo_box_232['values'] = recursos_aprendizagem_valores
+        self.g_combo_box_232.current(1)
 
-        g_combo_box_233 = ttk.Combobox(root)
+        self.g_combo_box_233 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
-        g_combo_box_233["font"] = ft
-        g_combo_box_233["justify"] = "left"
-        g_combo_box_233.place(x=370, y=95, width=220, height=20)
-        g_combo_box_233['values'] = similaridades.comunidade_valores
-        g_combo_box_233.current(0)
+        self.g_combo_box_233["font"] = ft
+        self.g_combo_box_233["justify"] = "left"
+        self.g_combo_box_233.place(x=370, y=95, width=220, height=20)
+        self.g_combo_box_233['values'] = comunidade_valores
+        self.g_combo_box_233.current(0)
         # Casos ENTRADA - Fim -----------------------
 
         # PESO - Início -----------------------
@@ -178,7 +179,7 @@ class App:
         g_combo_box_240["font"] = ft
         g_combo_box_240["justify"] = "left"
         g_combo_box_240.place(x=100, y=260, width=170, height=20)
-        g_combo_box_240['values'] = similaridades.idioma_alvo_valores
+        g_combo_box_240['values'] = idioma_alvo_valores
         g_combo_box_240.current(4)
 
         g_combo_box_241 = ttk.Combobox(root)
@@ -186,7 +187,7 @@ class App:
         g_combo_box_241["font"] = ft
         g_combo_box_241["justify"] = "left"
         g_combo_box_241.place(x=370, y=260, width=220, height=20)
-        g_combo_box_241['values'] = similaridades.nivel_idioma_valores
+        g_combo_box_241['values'] = nivel_idioma_valores
         g_combo_box_241.current(1)
 
         g_combo_box_242 = ttk.Combobox(root)
@@ -194,7 +195,7 @@ class App:
         g_combo_box_242["font"] = ft
         g_combo_box_242["justify"] = "left"
         g_combo_box_242.place(x=430, y=285, width=160, height=20)
-        g_combo_box_242['values'] = similaridades.recursos_aprendizagem_valores
+        g_combo_box_242['values'] = recursos_aprendizagem_valores
         g_combo_box_242.current(2)
 
         g_combo_box_243 = ttk.Combobox(root)
@@ -202,7 +203,7 @@ class App:
         g_combo_box_243["font"] = ft
         g_combo_box_243["justify"] = "left"
         g_combo_box_243.place(x=370, y=310, width=220, height=20)
-        g_combo_box_243['values'] = similaridades.comunidade_valores
+        g_combo_box_243['values'] = comunidade_valores
         g_combo_box_243.current(0)
         # Caso RECOMENDADO - Fim -----------------------
 
@@ -440,8 +441,18 @@ class App:
 
     def g_button_477_command(self):
         self.g_line_edit_saida["state"] = "normal"
+        self.g_line_edit_saida.delete(1.0, tk.END)
         # Saída
         # print('Caso de entrada :')
+        caso_entrada = {
+            'idioma_alvo': int(self.g_combo_box_230.current()),
+            'nivel_idioma': int(self.g_combo_box_231.current()),
+            'objetivo_aprendizagem': int(self.g_line_edit_obj_ent_txt.get()),
+            'tempo_disponivel': int(self.g_line_edit_temp_ent_txt.get()),
+            'recursos_aprendizagem': int(self.g_combo_box_232.current()),
+            'comunidade': int(self.g_combo_box_233.current())
+        }
+        # print(str(similaridades.caso_entrada))
         # print(similaridades.caso_entrada)
         # print('Pesos:')
         # print(similaridades.atributos)
@@ -449,10 +460,10 @@ class App:
         # print(similaridades.caso_recomendado)
 
         self.g_line_edit_saida.insert(tk.END, 'Casos base ordenados por similaridade:\n')
-
+        similaridades, caso_recomendado = calc_similaridades(caso_entrada)
         # Calculo do percentual
-        total_similaridade = sum([sim[1] for sim in similaridades.similaridades])
-        for sim in similaridades.similaridades:
+        total_similaridade = sum([sim[1] for sim in similaridades])
+        for sim in similaridades:
             case = sim[0]
             similaridade = sim[1]
             similaridade_percentual = round((similaridade / total_similaridade) * 100, 2)
