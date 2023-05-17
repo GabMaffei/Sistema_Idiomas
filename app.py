@@ -83,7 +83,7 @@ class App:
         # Casos ENTRADA - Fim -----------------------
 
         # PESO - Início -----------------------
-        g_line_edit_obj_pes = tk.Entry(root)
+        g_line_edit_obj_pes = tk.Entry(root)  # Peso objetivo
         g_line_edit_obj_pes_txt = tk.StringVar()
         g_line_edit_obj_pes["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
@@ -94,7 +94,7 @@ class App:
         g_line_edit_obj_pes["textvariable"] = g_line_edit_obj_pes_txt
         g_line_edit_obj_pes.place(x=170, y=175, width=100, height=20)
 
-        g_line_edit_temp_pes = tk.Entry(root)
+        g_line_edit_temp_pes = tk.Entry(root)  # Peso tempo
         g_line_edit_temp_pes_txt = tk.StringVar()
         g_line_edit_temp_pes["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
@@ -104,6 +104,50 @@ class App:
         g_line_edit_temp_pes_txt.set("0.3")
         g_line_edit_temp_pes["textvariable"] = g_line_edit_temp_pes_txt
         g_line_edit_temp_pes.place(x=140, y=200, width=130, height=20)
+
+        g_line_edit_pes_250 = tk.Entry(root)  # Peso idioma
+        g_line_edit_pes_250_txt = tk.StringVar()
+        g_line_edit_pes_250["borderwidth"] = "1px"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_line_edit_pes_250["font"] = ft
+        g_line_edit_pes_250["fg"] = "#333333"
+        g_line_edit_pes_250["justify"] = "left"
+        g_line_edit_pes_250_txt.set("0.5")
+        g_line_edit_pes_250["textvariable"] = g_line_edit_pes_250_txt
+        g_line_edit_pes_250.place(x=100, y=150, width=170, height=20)
+
+        g_line_edit_pes_251 = tk.Entry(root)  # Peso nível
+        g_line_edit_pes_251_txt = tk.StringVar()
+        g_line_edit_pes_251["borderwidth"] = "1px"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_line_edit_pes_251["font"] = ft
+        g_line_edit_pes_251["fg"] = "#333333"
+        g_line_edit_pes_251["justify"] = "left"
+        g_line_edit_pes_251_txt.set("0.4")
+        g_line_edit_pes_251["textvariable"] = g_line_edit_pes_251_txt
+        g_line_edit_pes_251.place(x=370, y=150, width=220, height=20)
+
+        g_line_edit_pes_251 = tk.Entry(root)  # Peso recurso
+        g_line_edit_pes_251_txt = tk.StringVar()
+        g_line_edit_pes_251["borderwidth"] = "1px"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_line_edit_pes_251["font"] = ft
+        g_line_edit_pes_251["fg"] = "#333333"
+        g_line_edit_pes_251["justify"] = "left"
+        g_line_edit_pes_251_txt.set("0.3")
+        g_line_edit_pes_251["textvariable"] = g_line_edit_pes_251_txt
+        g_line_edit_pes_251.place(x=430, y=175, width=160, height=20)
+
+        g_line_edit_pes_252 = tk.Entry(root)  # Peso comunidade
+        g_line_edit_pes_252_txt = tk.StringVar()
+        g_line_edit_pes_252["borderwidth"] = "1px"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_line_edit_pes_252["font"] = ft
+        g_line_edit_pes_252["fg"] = "#333333"
+        g_line_edit_pes_252["justify"] = "left"
+        g_line_edit_pes_252_txt.set("0.2")
+        g_line_edit_pes_252["textvariable"] = g_line_edit_pes_252_txt
+        g_line_edit_pes_252.place(x=370, y=200, width=220, height=20)
         # PESO - Fim -----------------------
 
         # Caso RECOMENDADO - Início -----------------------
@@ -114,7 +158,7 @@ class App:
         g_line_edit_obj_rec["font"] = ft
         g_line_edit_obj_rec["fg"] = "#333333"
         g_line_edit_obj_rec["justify"] = "left"
-        g_line_edit_obj_rec_txt.set("8")
+        g_line_edit_obj_rec_txt.set("2")
         g_line_edit_obj_rec["textvariable"] = g_line_edit_obj_rec_txt
         g_line_edit_obj_rec.place(x=170, y=285, width=100, height=20)
 
@@ -125,7 +169,7 @@ class App:
         g_line_edit_temp_rec["font"] = ft
         g_line_edit_temp_rec["fg"] = "#333333"
         g_line_edit_temp_rec["justify"] = "left"
-        g_line_edit_temp_rec_txt.set("2")
+        g_line_edit_temp_rec_txt.set("4")
         g_line_edit_temp_rec["textvariable"] = g_line_edit_temp_rec_txt
         g_line_edit_temp_rec.place(x=140, y=310, width=130, height=20)
 
@@ -135,7 +179,7 @@ class App:
         g_combo_box_240["justify"] = "left"
         g_combo_box_240.place(x=100, y=260, width=170, height=20)
         g_combo_box_240['values'] = similaridades.idioma_alvo_valores
-        g_combo_box_240.current(1)
+        g_combo_box_240.current(4)
 
         g_combo_box_241 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
@@ -143,7 +187,7 @@ class App:
         g_combo_box_241["justify"] = "left"
         g_combo_box_241.place(x=370, y=260, width=220, height=20)
         g_combo_box_241['values'] = similaridades.nivel_idioma_valores
-        g_combo_box_241.current(2)
+        g_combo_box_241.current(1)
 
         g_combo_box_242 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
@@ -151,7 +195,7 @@ class App:
         g_combo_box_242["justify"] = "left"
         g_combo_box_242.place(x=430, y=285, width=160, height=20)
         g_combo_box_242['values'] = similaridades.recursos_aprendizagem_valores
-        g_combo_box_242.current(1)
+        g_combo_box_242.current(2)
 
         g_combo_box_243 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
@@ -161,6 +205,10 @@ class App:
         g_combo_box_243['values'] = similaridades.comunidade_valores
         g_combo_box_243.current(0)
         # Caso RECOMENDADO - Fim -----------------------
+
+        # SAIDA - Início -----------------------
+
+        # SAIDA - Fim -----------------------
 
         self.__botoes(root)
 
@@ -374,15 +422,15 @@ class App:
         g_button_477.place(x=210, y=450, width=166, height=30)
         g_button_477["command"] = self.g_button_477_command
 
-        g_button_640 = tk.Button(root)
-        g_button_640["bg"] = "#f0f0f0"
-        ft = font.Font(family='Segoe UI', size=10)
-        g_button_640["font"] = ft
-        g_button_640["fg"] = "#000000"
-        g_button_640["justify"] = "center"
-        g_button_640["text"] = "Lista de casos"
-        g_button_640.place(x=30, y=450, width=100, height=30)
-        g_button_640["command"] = self.g_button_640_command
+        # g_button_640 = tk.Button(root)
+        # g_button_640["bg"] = "#f0f0f0"
+        # ft = font.Font(family='Segoe UI', size=10)
+        # g_button_640["font"] = ft
+        # g_button_640["fg"] = "#000000"
+        # g_button_640["justify"] = "center"
+        # g_button_640["text"] = "Lista de casos"
+        # g_button_640.place(x=30, y=450, width=100, height=30)
+        # g_button_640["command"] = self.g_button_640_command
 
     def g_button_477_command(self):
         # Saída
@@ -408,5 +456,5 @@ class App:
         # para cada caso. Finalmente, é exibido cada caso da base de casos, com seu percentual de
         # similaridade em relação ao caso de entrada.
 
-    def g_button_640_command(self):
-        print("command")
+    # def g_button_640_command(self):
+    #     print("command")
