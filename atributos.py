@@ -5,7 +5,7 @@ atributos = {
     'objetivo_aprendizagem': 0.4, #atributo crítico que define as metas e expectativas em relação ao usuário na questão do plano de ensino
     'tempo_disponivel': 0.05, #tem a ver com o ritmo do cronograma das aulas, tendo a ver com a frequencia e duração das sessões
     'recursos_aprendizagem': 0.05, #podendo afetar a eficácia do método de ensino utilizado e a forma como o conteúdo é apresentado
-    'comunidade': 0.1 #aprender idiomas pode influenciar o método de ensino mais adequado ao usuário
+    'comunidade': 0.1 #indica a comunidade de aprendizagem à qual o usuário pertence ou deseja interagir.
 }
 
 # valores possíveis para idioma_alvo_valores/recursos_aprendizagem/nivel_idioma_valores que são mapeados para números usando dicionários de modo que possam ser comparados numericamente
