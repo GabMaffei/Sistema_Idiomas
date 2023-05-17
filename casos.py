@@ -144,7 +144,7 @@ base_casos = [
         'objetivo_aprendizagem': 4,
         'tempo_disponivel': 3.30,
         'recursos_aprendizagem': recursos_aprendizagem_dic['livros'],
-        'comunidade': 3
+        'comunidade': comunidade_dic['professores']
     },
     {
         'idioma_alvo': idioma_alvo_dic['Espanhol'],
@@ -216,7 +216,7 @@ base_casos = [
         'objetivo_aprendizagem': 8,
         'tempo_disponivel': 1.3,
         'recursos_aprendizagem': recursos_aprendizagem_dic['livros'],
-        'comunidade': 3.3
+        'comunidade': comunidade_dic['funcionários']
     },
     {
         'idioma_alvo': idioma_alvo_dic['Inglês'],
@@ -312,7 +312,7 @@ base_casos = [
         'objetivo_aprendizagem': 7,
         'tempo_disponivel': 1.3,
         'recursos_aprendizagem': recursos_aprendizagem_dic['musicas'],
-        'comunidade': 4.2
+        'comunidade': comunidade_dic['professores']
     },
     {
         'idioma_alvo': idioma_alvo_dic['Francês'],
