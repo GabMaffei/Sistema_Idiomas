@@ -7,15 +7,15 @@ similaridades = []
 for case in base_casos:
     similaridade = 0
     for atributo, peso in atributos.items():
-        if atributo in ['recursos_aprendizagem', 'tipo_linguagem', 'idioma_alvo', 'comunidade']:
-            # Para atributos categóricos, use o dicionário para mapear os rótulos de texto para valores numéricos
+        if atributo in ['idioma_alvo', 'nivel_idioma', 'recursos_aprendizagem', 'comunidade']:
+            # Para atributos categóricos, usa o dicionário para mapear os rótulos de texto para valores numéricos
             similaridade += peso * (caso_entrada[atributo] == case[atributo])
         else:
+            # Atributos numéricos
             similaridade += peso * (caso_entrada[atributo] - case[atributo])**2
     similaridades.append((case, similaridade))
 
-# Ordenando os casos por similaridade e calcula a similaridade percentual para cada caso,
-# em relação ao total de similaridade da lista
+# Ordenando os casos por similaridade por ordem decrescente
 similaridades.sort(key=lambda x: x[1], reverse=True)
 
 # Recupera o caso mais similar e vai imprimir como uma recomendação pro caso de entrada
