@@ -5,15 +5,16 @@ from casos import *
 # É ponderada pelos pesos, sendo armazenada em uma lista de tuplas contendo o caso de base e similaridade calculada
 similaridades = []
 for case in base_casos:
-    similaridade = 0
-    for atributo, peso in atributos.items():
+    similaridade = 0 # para acumular o valor da similaridade entre os casos.
+    for atributo, peso in atributos.items(): #O loop percorre cada atributo definido na variável atributos, juntamente com o seu peso correspondente.
         if atributo in ['idioma_alvo', 'nivel_idioma', 'recursos_aprendizagem', 'comunidade']:
             # Para atributos categóricos, usa o dicionário para mapear os rótulos de texto para valores numéricos
-            similaridade += peso * (caso_entrada[atributo] == case[atributo])
+            similaridade += peso * (caso_entrada[atributo] == case[atributo]) #calculada como 0 se os valores dos atributos forem diferentes e 1 se forem iguais
         else:
             # Atributos numéricos
-            similaridade += peso * (caso_entrada[atributo] - case[atributo])**2
-    similaridades.append((case, similaridade))
+            similaridade += peso * (caso_entrada[atributo] - case[atributo])**2 #A diferença entre os valores dos atributos é elevada ao quadrado e multiplicada pelo peso correspondente.
+    similaridades.append((case, similaridade))#O resultado da similaridade de cada atributo é acumulado na variável similaridade.
+    # Após percorrer todos os atributos, a similaridade total entre os casos é obtida
 
 # Ordenando os casos por similaridade por ordem decrescente
 similaridades.sort(key=lambda x: x[1], reverse=True)
