@@ -105,49 +105,49 @@ class App:
         g_line_edit_temp_pes["textvariable"] = g_line_edit_temp_pes_txt
         g_line_edit_temp_pes.place(x=140, y=200, width=130, height=20)
 
-        g_line_edit_pes_250 = tk.Entry(root)  # Peso idioma
-        g_line_edit_pes_250_txt = tk.StringVar()
-        g_line_edit_pes_250["borderwidth"] = "1px"
+        g_line_edit_250 = tk.Entry(root)  # Peso idioma
+        g_line_edit_250_txt = tk.StringVar()
+        g_line_edit_250["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
-        g_line_edit_pes_250["font"] = ft
-        g_line_edit_pes_250["fg"] = "#333333"
-        g_line_edit_pes_250["justify"] = "left"
-        g_line_edit_pes_250_txt.set("0.5")
-        g_line_edit_pes_250["textvariable"] = g_line_edit_pes_250_txt
-        g_line_edit_pes_250.place(x=100, y=150, width=170, height=20)
+        g_line_edit_250["font"] = ft
+        g_line_edit_250["fg"] = "#333333"
+        g_line_edit_250["justify"] = "left"
+        g_line_edit_250_txt.set("0.5")
+        g_line_edit_250["textvariable"] = g_line_edit_250_txt
+        g_line_edit_250.place(x=100, y=150, width=170, height=20)
 
-        g_line_edit_pes_251 = tk.Entry(root)  # Peso nível
-        g_line_edit_pes_251_txt = tk.StringVar()
-        g_line_edit_pes_251["borderwidth"] = "1px"
+        g_line_edit_251 = tk.Entry(root)  # Peso nível
+        g_line_edit_251_txt = tk.StringVar()
+        g_line_edit_251["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
-        g_line_edit_pes_251["font"] = ft
-        g_line_edit_pes_251["fg"] = "#333333"
-        g_line_edit_pes_251["justify"] = "left"
-        g_line_edit_pes_251_txt.set("0.4")
-        g_line_edit_pes_251["textvariable"] = g_line_edit_pes_251_txt
-        g_line_edit_pes_251.place(x=370, y=150, width=220, height=20)
+        g_line_edit_251["font"] = ft
+        g_line_edit_251["fg"] = "#333333"
+        g_line_edit_251["justify"] = "left"
+        g_line_edit_251_txt.set("0.4")
+        g_line_edit_251["textvariable"] = g_line_edit_251_txt
+        g_line_edit_251.place(x=370, y=150, width=220, height=20)
 
-        g_line_edit_pes_251 = tk.Entry(root)  # Peso recurso
-        g_line_edit_pes_251_txt = tk.StringVar()
-        g_line_edit_pes_251["borderwidth"] = "1px"
+        g_line_edit_251 = tk.Entry(root)  # Peso recurso
+        g_line_edit_251_txt = tk.StringVar()
+        g_line_edit_251["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
-        g_line_edit_pes_251["font"] = ft
-        g_line_edit_pes_251["fg"] = "#333333"
-        g_line_edit_pes_251["justify"] = "left"
-        g_line_edit_pes_251_txt.set("0.3")
-        g_line_edit_pes_251["textvariable"] = g_line_edit_pes_251_txt
-        g_line_edit_pes_251.place(x=430, y=175, width=160, height=20)
+        g_line_edit_251["font"] = ft
+        g_line_edit_251["fg"] = "#333333"
+        g_line_edit_251["justify"] = "left"
+        g_line_edit_251_txt.set("0.3")
+        g_line_edit_251["textvariable"] = g_line_edit_251_txt
+        g_line_edit_251.place(x=430, y=175, width=160, height=20)
 
-        g_line_edit_pes_252 = tk.Entry(root)  # Peso comunidade
-        g_line_edit_pes_252_txt = tk.StringVar()
-        g_line_edit_pes_252["borderwidth"] = "1px"
+        g_line_edit_252 = tk.Entry(root)  # Peso comunidade
+        g_line_edit_252_txt = tk.StringVar()
+        g_line_edit_252["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
-        g_line_edit_pes_252["font"] = ft
-        g_line_edit_pes_252["fg"] = "#333333"
-        g_line_edit_pes_252["justify"] = "left"
-        g_line_edit_pes_252_txt.set("0.2")
-        g_line_edit_pes_252["textvariable"] = g_line_edit_pes_252_txt
-        g_line_edit_pes_252.place(x=370, y=200, width=220, height=20)
+        g_line_edit_252["font"] = ft
+        g_line_edit_252["fg"] = "#333333"
+        g_line_edit_252["justify"] = "left"
+        g_line_edit_252_txt.set("0.2")
+        g_line_edit_252["textvariable"] = g_line_edit_252_txt
+        g_line_edit_252.place(x=370, y=200, width=220, height=20)
         # PESO - Fim -----------------------
 
         # Caso RECOMENDADO - Início -----------------------
@@ -207,7 +207,12 @@ class App:
         # Caso RECOMENDADO - Fim -----------------------
 
         # SAIDA - Início -----------------------
-
+        g_line_edit_saida = tk.Text(root)
+        g_line_edit_saida["borderwidth"] = "1px"
+        ft = font.Font(family='Segoe UI', size=10)
+        g_line_edit_saida["font"] = ft
+        g_line_edit_saida["fg"] = "#333333"
+        g_line_edit_saida.place(x=20, y=335, width=570, height=110)
         # SAIDA - Fim -----------------------
 
         self.__botoes(root)
