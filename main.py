@@ -1,12 +1,14 @@
 # Press the green button in the gutter to run the script.
 from similaridades import *
-from tkinter import *
-from tkinter import ttk
+# import tkinter as tk
+# import tkinter.font as tkFont
+# from tkinter import ttk
+from app import *
+
 
 if __name__ == '__main__':
-    root = Tk()
-    
-
+    root = tk.Tk()
+    app = App(root)
     root.mainloop()
 
     # Saída

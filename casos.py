@@ -1,4 +1,4 @@
-from atributos import *
+# from atributos import *
 from entrada import *
 # base de casos registrados como uma lista de 50 casos
 base_casos = [
@@ -50,7 +50,7 @@ base_casos = [
         'recursos_aprendizagem': recursos_aprendizagem_dic['livros'],
         'comunidade': comunidade_dic['professores']
     },
-     {
+    {
         'idioma_alvo': idioma_alvo_dic['Espanhol'],
         'nivel_idioma': nivel_idioma_dic['Iniciante'],
         'objetivo_aprendizagem': 9,
@@ -404,6 +404,3 @@ base_casos = [
     }
 
 ]
-
-
-
