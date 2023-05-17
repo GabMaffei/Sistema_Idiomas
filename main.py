@@ -22,7 +22,7 @@ if __name__ == '__main__':
     # for case, similaridade in similaridades:
     #    print(case)
     #    print('Similaridade:', similaridade)
-    # calculate similarity percentage for each case
+    # Calculo do percentual
     total_similaridade = sum([sim[1] for sim in similaridades])
     for sim in similaridades:
         case = sim[0]
