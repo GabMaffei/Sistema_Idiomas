@@ -152,59 +152,65 @@ class App:
         # PESO - Fim -----------------------
 
         # Caso RECOMENDADO - Início -----------------------
-        g_line_edit_obj_rec = tk.Entry(root)
-        g_line_edit_obj_rec_txt = tk.StringVar()
-        g_line_edit_obj_rec["borderwidth"] = "1px"
+        self.g_line_edit_obj_rec = tk.Entry(root)
+        self.g_line_edit_obj_rec_txt = tk.StringVar()
+        self.g_line_edit_obj_rec["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
-        g_line_edit_obj_rec["font"] = ft
-        g_line_edit_obj_rec["fg"] = "#333333"
-        g_line_edit_obj_rec["justify"] = "left"
-        g_line_edit_obj_rec_txt.set("2")
-        g_line_edit_obj_rec["textvariable"] = g_line_edit_obj_rec_txt
-        g_line_edit_obj_rec.place(x=170, y=285, width=100, height=20)
+        self.g_line_edit_obj_rec["font"] = ft
+        self.g_line_edit_obj_rec["fg"] = "#333333"
+        self.g_line_edit_obj_rec["justify"] = "left"
+        self.g_line_edit_obj_rec_txt.set("2")
+        self.g_line_edit_obj_rec["textvariable"] = self.g_line_edit_obj_rec_txt
+        self.g_line_edit_obj_rec.place(x=170, y=285, width=100, height=20)
+        self.g_line_edit_obj_rec["state"] = 'readonly'
 
-        g_line_edit_temp_rec = tk.Entry(root)
-        g_line_edit_temp_rec_txt = tk.StringVar()
-        g_line_edit_temp_rec["borderwidth"] = "1px"
+        self.g_line_edit_temp_rec = tk.Entry(root)
+        self.g_line_edit_temp_rec_txt = tk.StringVar()
+        self.g_line_edit_temp_rec["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
-        g_line_edit_temp_rec["font"] = ft
-        g_line_edit_temp_rec["fg"] = "#333333"
-        g_line_edit_temp_rec["justify"] = "left"
-        g_line_edit_temp_rec_txt.set("4")
-        g_line_edit_temp_rec["textvariable"] = g_line_edit_temp_rec_txt
-        g_line_edit_temp_rec.place(x=140, y=310, width=130, height=20)
+        self.g_line_edit_temp_rec["font"] = ft
+        self.g_line_edit_temp_rec["fg"] = "#333333"
+        self.g_line_edit_temp_rec["justify"] = "left"
+        self.g_line_edit_temp_rec_txt.set("4")
+        self.g_line_edit_temp_rec["textvariable"] = self.g_line_edit_temp_rec_txt
+        self.g_line_edit_temp_rec.place(x=140, y=310, width=130, height=20)
+        self.g_line_edit_temp_rec["state"] = 'readonly'
 
-        g_combo_box_240 = ttk.Combobox(root)
+        self.g_combo_box_240 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
-        g_combo_box_240["font"] = ft
-        g_combo_box_240["justify"] = "left"
-        g_combo_box_240.place(x=100, y=260, width=170, height=20)
-        g_combo_box_240['values'] = idioma_alvo_valores
-        g_combo_box_240.current(4)
+        self.g_combo_box_240["font"] = ft
+        self.g_combo_box_240["justify"] = "left"
+        self.g_combo_box_240.place(x=100, y=260, width=170, height=20)
+        self.g_combo_box_240['values'] = idioma_alvo_valores
+        self.g_combo_box_240.current(4)
+        self.g_combo_box_240["state"] = 'disabled'
 
-        g_combo_box_241 = ttk.Combobox(root)
+        self.g_combo_box_241 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
-        g_combo_box_241["font"] = ft
-        g_combo_box_241["justify"] = "left"
-        g_combo_box_241.place(x=370, y=260, width=220, height=20)
-        g_combo_box_241['values'] = nivel_idioma_valores
-        g_combo_box_241.current(1)
+        self.g_combo_box_241["font"] = ft
+        self.g_combo_box_241["justify"] = "left"
+        self.g_combo_box_241.place(x=370, y=260, width=220, height=20)
+        self.g_combo_box_241['values'] = nivel_idioma_valores
+        self.g_combo_box_241.current(1)
+        self.g_combo_box_241["state"] = 'disabled'
 
-        g_combo_box_242 = ttk.Combobox(root)
+        self.g_combo_box_242 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
-        g_combo_box_242["font"] = ft
-        g_combo_box_242["justify"] = "left"
-        g_combo_box_242.place(x=430, y=285, width=160, height=20)
-        g_combo_box_242['values'] = recursos_aprendizagem_valores
-        g_combo_box_242.current(2)
+        self.g_combo_box_242["font"] = ft
+        self.g_combo_box_242["justify"] = "left"
+        self.g_combo_box_242.place(x=430, y=285, width=160, height=20)
+        self.g_combo_box_242['values'] = recursos_aprendizagem_valores
+        self.g_combo_box_242.current(2)
+        self.g_combo_box_242["state"] = 'disabled'
 
-        g_combo_box_243 = ttk.Combobox(root)
+        self.g_combo_box_243 = ttk.Combobox(root)
         ft = font.Font(family='Segoe UI', size=10)
-        g_combo_box_243["font"] = ft
-        g_combo_box_243["justify"] = "left"
-        g_combo_box_243.place(x=370, y=310, width=220, height=20)
-        g_combo_box_243['values'] = comunidade_valores
-        g_combo_box_243.current(0)
+        self.g_combo_box_243["font"] = ft
+        self.g_combo_box_243["justify"] = "left"
+        self.g_combo_box_243.place(x=370, y=310, width=220, height=20)
+        self.g_combo_box_243['values'] = comunidade_valores
+        self.g_combo_box_243.current(0)
+        self.g_combo_box_243["state"] = 'disabled'
         # Caso RECOMENDADO - Fim -----------------------
 
         # SAIDA - Início -----------------------
@@ -475,10 +481,34 @@ class App:
         # print('Pesos:')
         # print(similaridades.atributos)
         # print('Caso recomendado:')
-        # print(similaridades.caso_recomendado)
+
 
         self.g_line_edit_saida.insert(tk.END, 'Casos base ordenados por similaridade:\n')
         similaridades, caso_recomendado = calc_similaridades(caso_entrada, atributos)
+        # print(caso_recomendado)
+        self.g_combo_box_240["state"] = 'normal'
+        self.g_combo_box_240.current(caso_recomendado.get('idioma_alvo'))
+        self.g_combo_box_240["state"] = 'disabled'
+
+        self.g_combo_box_241["state"] = 'normal'
+        self.g_combo_box_241.current(caso_recomendado.get('nivel_idioma'))
+        self.g_combo_box_241["state"] = 'disabled'
+
+        self.g_line_edit_obj_rec["state"] = 'normal'
+        self.g_line_edit_obj_rec_txt.set(caso_recomendado.get('objetivo_aprendizagem'))
+        self.g_line_edit_obj_rec["state"] = 'readonly'
+
+        self.g_line_edit_temp_rec["state"] = 'normal'
+        self.g_line_edit_temp_rec_txt.set(caso_recomendado.get('tempo_disponivel'))
+        self.g_line_edit_temp_rec["state"] = 'readonly'
+
+        self.g_combo_box_242["state"] = 'normal'
+        self.g_combo_box_242.current(caso_recomendado.get('recursos_aprendizagem'))
+        self.g_combo_box_242["state"] = 'disabled'
+
+        self.g_combo_box_243["state"] = 'normal'
+        self.g_combo_box_243.current(caso_recomendado.get('comunidade'))
+        self.g_combo_box_243["state"] = 'disabled'
         # Calculo do percentual
         total_similaridade = sum([sim[1] for sim in similaridades])
         for sim in similaridades:
