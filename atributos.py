@@ -1,4 +1,5 @@
 # atributos e seus pesos correspondentes usados pra calcular a similaridade entre os casos
+
 atributos = {
     'idioma_alvo': 0.5,  # é um atributo importante que influencia na escolha de recurso
     # e métodos de ensino que quer se aprender

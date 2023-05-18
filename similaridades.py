@@ -5,7 +5,7 @@ from casos import *
 # É ponderada pelos pesos, sendo armazenada em uma lista de tuplas contendo o caso de base e similaridade calculada
 
 
-def calc_similaridades(caso_entrada):
+def calc_similaridades(caso_entrada, atributos):
     similaridades = []
     for case in base_casos:
         similaridade = 0 # para acumular o valor da similaridade entre os casos.

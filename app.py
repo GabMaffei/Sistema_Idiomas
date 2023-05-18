@@ -85,69 +85,69 @@ class App:
 
         # PESO - Início -----------------------
         g_line_edit_obj_pes = tk.Entry(root)  # Peso objetivo
-        g_line_edit_obj_pes_txt = tk.StringVar()
+        self.g_line_edit_obj_pes_txt = tk.StringVar()
         g_line_edit_obj_pes["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
         g_line_edit_obj_pes["font"] = ft
         g_line_edit_obj_pes["fg"] = "#333333"
         g_line_edit_obj_pes["justify"] = "left"
-        g_line_edit_obj_pes_txt.set("0.3")
-        g_line_edit_obj_pes["textvariable"] = g_line_edit_obj_pes_txt
+        self.g_line_edit_obj_pes_txt.set("0.3")
+        g_line_edit_obj_pes["textvariable"] = self.g_line_edit_obj_pes_txt
         g_line_edit_obj_pes.place(x=170, y=175, width=100, height=20)
 
         g_line_edit_temp_pes = tk.Entry(root)  # Peso tempo
-        g_line_edit_temp_pes_txt = tk.StringVar()
+        self.g_line_edit_temp_pes_txt = tk.StringVar()
         g_line_edit_temp_pes["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
         g_line_edit_temp_pes["font"] = ft
         g_line_edit_temp_pes["fg"] = "#333333"
         g_line_edit_temp_pes["justify"] = "left"
-        g_line_edit_temp_pes_txt.set("0.3")
-        g_line_edit_temp_pes["textvariable"] = g_line_edit_temp_pes_txt
+        self.g_line_edit_temp_pes_txt.set("0.3")
+        g_line_edit_temp_pes["textvariable"] = self.g_line_edit_temp_pes_txt
         g_line_edit_temp_pes.place(x=140, y=200, width=130, height=20)
 
         g_line_edit_250 = tk.Entry(root)  # Peso idioma
-        g_line_edit_250_txt = tk.StringVar()
+        self.g_line_edit_250_txt = tk.StringVar()
         g_line_edit_250["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
         g_line_edit_250["font"] = ft
         g_line_edit_250["fg"] = "#333333"
         g_line_edit_250["justify"] = "left"
-        g_line_edit_250_txt.set("0.5")
-        g_line_edit_250["textvariable"] = g_line_edit_250_txt
+        self.g_line_edit_250_txt.set("0.5")
+        g_line_edit_250["textvariable"] = self.g_line_edit_250_txt
         g_line_edit_250.place(x=100, y=150, width=170, height=20)
 
         g_line_edit_251 = tk.Entry(root)  # Peso nível
-        g_line_edit_251_txt = tk.StringVar()
+        self.g_line_edit_251_txt = tk.StringVar()
         g_line_edit_251["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
         g_line_edit_251["font"] = ft
         g_line_edit_251["fg"] = "#333333"
         g_line_edit_251["justify"] = "left"
-        g_line_edit_251_txt.set("0.4")
-        g_line_edit_251["textvariable"] = g_line_edit_251_txt
+        self.g_line_edit_251_txt.set("0.4")
+        g_line_edit_251["textvariable"] = self.g_line_edit_251_txt
         g_line_edit_251.place(x=370, y=150, width=220, height=20)
 
-        g_line_edit_251 = tk.Entry(root)  # Peso recurso
-        g_line_edit_251_txt = tk.StringVar()
-        g_line_edit_251["borderwidth"] = "1px"
+        g_line_edit_253 = tk.Entry(root)  # Peso recurso
+        self.g_line_edit_253_txt = tk.StringVar()
+        g_line_edit_253["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
-        g_line_edit_251["font"] = ft
-        g_line_edit_251["fg"] = "#333333"
-        g_line_edit_251["justify"] = "left"
-        g_line_edit_251_txt.set("0.3")
-        g_line_edit_251["textvariable"] = g_line_edit_251_txt
-        g_line_edit_251.place(x=430, y=175, width=160, height=20)
+        g_line_edit_253["font"] = ft
+        g_line_edit_253["fg"] = "#333333"
+        g_line_edit_253["justify"] = "left"
+        self.g_line_edit_253_txt.set("0.3")
+        g_line_edit_253["textvariable"] = self.g_line_edit_253_txt
+        g_line_edit_253.place(x=430, y=175, width=160, height=20)
 
         g_line_edit_252 = tk.Entry(root)  # Peso comunidade
-        g_line_edit_252_txt = tk.StringVar()
+        self.g_line_edit_252_txt = tk.StringVar()
         g_line_edit_252["borderwidth"] = "1px"
         ft = font.Font(family='Segoe UI', size=10)
         g_line_edit_252["font"] = ft
         g_line_edit_252["fg"] = "#333333"
         g_line_edit_252["justify"] = "left"
-        g_line_edit_252_txt.set("0.2")
-        g_line_edit_252["textvariable"] = g_line_edit_252_txt
+        self.g_line_edit_252_txt.set("0.2")
+        g_line_edit_252["textvariable"] = self.g_line_edit_252_txt
         g_line_edit_252.place(x=370, y=200, width=220, height=20)
         # PESO - Fim -----------------------
 
@@ -452,6 +452,24 @@ class App:
             'recursos_aprendizagem': int(self.g_combo_box_232.current()),
             'comunidade': int(self.g_combo_box_233.current())
         }
+
+        atributos = {
+            'idioma_alvo': float(self.g_line_edit_250_txt.get()),  # é um atributo importante que influencia na escolha
+            # de recurso e métodos de ensino que quer se aprender
+            'nivel_idioma': float(self.g_line_edit_251_txt.get()),  # influencia na escolha de conteúdos do ensino e
+            # velocidade no aprendizado
+            'objetivo_aprendizagem': float(self.g_line_edit_obj_pes_txt.get()),  # atributo crítico que define as metas
+            # e expectativas em relação
+            # ao usuário na questão do plano de ensino
+            'tempo_disponivel': float(self.g_line_edit_temp_pes_txt.get()),  # tem a ver com o ritmo do cronograma das
+            # aulas,
+            # tendo a ver com a frequencia e duração das sessões
+            'recursos_aprendizagem': float(self.g_line_edit_253_txt.get()),  # podendo afetar a eficácia do método de
+            # ensino utilizado
+            # e como o conteúdo é apresentado
+            'comunidade': float(self.g_line_edit_252_txt.get())  # indica a comunidade de aprendizagem à qual o usuário
+            # pertence ou deseja interagir.
+        }
         # print(str(similaridades.caso_entrada))
         # print(similaridades.caso_entrada)
         # print('Pesos:')
@@ -460,7 +478,7 @@ class App:
         # print(similaridades.caso_recomendado)
 
         self.g_line_edit_saida.insert(tk.END, 'Casos base ordenados por similaridade:\n')
-        similaridades, caso_recomendado = calc_similaridades(caso_entrada)
+        similaridades, caso_recomendado = calc_similaridades(caso_entrada, atributos)
         # Calculo do percentual
         total_similaridade = sum([sim[1] for sim in similaridades])
         for sim in similaridades:
