@@ -484,7 +484,7 @@ class App:
 
 
         self.g_line_edit_saida.insert(tk.END, 'Casos base ordenados por similaridade:\n')
-        similaridades, caso_recomendado = calc_similaridades(caso_entrada, atributos)
+        similaridades, caso_recomendado, casos_recomendados = calc_similaridades(caso_entrada, atributos)
         # print(caso_recomendado)
         self.g_combo_box_240["state"] = 'normal'
         self.g_combo_box_240.current(caso_recomendado.get('idioma_alvo'))
@@ -510,14 +510,35 @@ class App:
         self.g_combo_box_243.current(caso_recomendado.get('comunidade'))
         self.g_combo_box_243["state"] = 'disabled'
         # Calculo do percentual
-        total_similaridade = sum([sim[1] for sim in similaridades])
-        for sim in similaridades:
-            case = sim[0]
-            similaridade = sim[1]
-            similaridade_percentual = round((similaridade / total_similaridade) * 100, 2)
-            string = f"{case}, similaridade: {similaridade_percentual}%"
-            self.g_line_edit_saida.insert(tk.END, str(string + '\n'))
-            # print(f"{case}, similaridade: {similaridade_percentual}%")
+
+        # Exibindo os casos recomendados com seus respectivos percentuais de similaridade
+        # print("Casos de Base:")
+        # print("--------------------")
+        for caso, percentual in casos_recomendados:
+            for atributo, valor in caso.items():
+                if atributo == 'idioma_alvo':
+                    self.g_line_edit_saida.insert(tk.END, f"{atributo}: {idioma_alvo_valores[valor]} | ")
+                elif atributo == 'nivel_idioma':
+                    self.g_line_edit_saida.insert(tk.END, f"{atributo}: {nivel_idioma_valores[valor]} | ")
+                elif atributo == 'recursos_aprendizagem':
+                    self.g_line_edit_saida.insert(tk.END, f"{atributo}: {recursos_aprendizagem_valores[valor]} | ")
+                elif atributo == 'comunidade':
+                    self.g_line_edit_saida.insert(tk.END, f"{atributo}: {comunidade_valores[valor]} | ")
+                else:
+                    self.g_line_edit_saida.insert(tk.END, f"{atributo}: {valor} | ")
+            self.g_line_edit_saida.insert(tk.END, f"\nPercentual de Similaridade: {percentual:.2f}%\n")
+            self.g_line_edit_saida.insert(tk.END, "--------------------\n")
+            # print(f"Percentual de Similaridade: {percentual:.2f}%")
+            # print("--------------------")
+
+        # total_similaridade = sum([sim[1] for sim in similaridades])
+        # for sim in similaridades:
+        #     case = sim[0]
+        #     similaridade = sim[1]
+        #     similaridade_percentual = round((similaridade / total_similaridade) * 100, 2)
+        #     string = f"{case}, similaridade: {similaridade_percentual}%"
+        #     self.g_line_edit_saida.insert(tk.END, str(string + '\n'))
+        #     print(f"{case}, similaridade: {similaridade_percentual}%")
 
         self.g_line_edit_saida["state"] = "disabled"
         # A saída das similaridades é apresentada em ordem decrescente de similaridade. Em seguida, a

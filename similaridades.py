@@ -4,26 +4,35 @@ from casos import *
 # para os atributos numéricos e a igualdade pros atributos categóricos.
 # É ponderada pelos pesos, sendo armazenada em uma lista de tuplas contendo o caso de base e similaridade calculada
 
+# Calculando as similaridades calculamos a diferença entre o valor do caso da base e o valor do caso de entrada,
+# elevamos ao quadrado e multiplicamos pelo peso do atributo. Somamos essas contribuições de todos os atributos
+# para obter a similaridade total entre os casos.
 
 def calc_similaridades(caso_entrada, atributos):
     similaridades = []
-    for case in base_casos:
-        similaridade = 0 # para acumular o valor da similaridade entre os casos.
-        for atributo, peso in atributos.items(): #O loop percorre cada atributo definido na variável atributos, juntamente com o seu peso correspondente.
-            if atributo in ['idioma_alvo', 'nivel_idioma', 'recursos_aprendizagem', 'comunidade']:
-                # Para atributos categóricos, usa o dicionário para mapear os rótulos de texto para valores numéricos
-                similaridade += peso * (caso_entrada[atributo] == case[atributo]) #calculada como 0 se os valores dos atributos forem diferentes e 1 se forem iguais
-            else:
-                # Atributos numéricos
-                similaridade += peso * (caso_entrada[atributo] - case[atributo])**2 #A diferença entre os valores dos atributos é elevada ao quadrado e multiplicada pelo peso correspondente.
-        similaridades.append((case, similaridade))#O resultado da similaridade de cada atributo é acumulado na variável similaridade.
-        # Após percorrer todos os atributos, a similaridade total entre os casos é obtida
+    for caso in base_casos:
+        similaridade = 0.0
+        for atributo, peso in atributos.items():
+            valor_caso = caso[atributo]
+            valor_entrada = caso_entrada[atributo]
+            similaridade += peso * (valor_caso - valor_entrada) ** 2
+        similaridades.append(similaridade)  # Armazenamos as similaridades em uma lista.
 
-    # Ordenando os casos por similaridade por ordem decrescente
-    similaridades.sort(key=lambda x: x[1], reverse=True)
+    # Obtendo os casos recomendados com percentual de similaridade em uma escala de 0 a 100. Para isso,
+    # subtraímos cada similaridade do valor máximo de similaridade encontrado na lista de similaridades,
+    # multiplicamos por 100 e subtraímos o resultado de 100. Dessa forma, obtemos o percentual de similaridade,
+    # onde 100 indica uma correspondência perfeita e 0 indica nenhuma similaridade.
+    casos_recomendados = []
+    for i, similaridade in enumerate(similaridades):
+        caso = base_casos[i]
+        percentual_similaridade = (1 - (similaridade / max(similaridades))) * 100
+        casos_recomendados.append((caso,
+                                   percentual_similaridade))  # Criamos uma lista de casos recomendados, que combina
+        # Cada caso da base com seu respectivo percentual de similaridade.
 
-    # Recupera o caso mais similar e vai imprimir como uma recomendação pro caso de entrada
-    # ou o caso mais próximo em similaridade
-    caso_recomendado = similaridades[0][0]
+    # Ordenando os casos recomendados pelo maior percentual de similaridade
+    casos_recomendados = sorted(casos_recomendados, key=lambda x: x[1],
+                                reverse=True)  # utilizada para que os casos mais similares estejam no início da lista
+    caso_recomendado = casos_recomendados[0][0]
 
-    return (similaridades, caso_recomendado)
+    return (similaridades, caso_recomendado, casos_recomendados)
